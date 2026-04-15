@@ -3,84 +3,397 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>오사카 여행 | 4월 25~27일</title>
+  <title>🇯🇵 오사카 여행 | 4월 25~27일</title>
   <style>
-    :root { --red:#e63946;--dark:#1d1d2e;--card:#ffffff;--bg:#f4f4f8;--accent:#f4a261;--green:#2a9d8f;--blue:#457b9d;--text:#2b2b3b;--sub:#6b6b80;--border:#e0e0ec; }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    body{font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-    header{background:linear-gradient(135deg,var(--dark) 0%,#3a3a5c 100%);color:#fff;padding:48px 24px 36px;text-align:center;}
-    header .flag{font-size:52px;display:block;margin-bottom:12px;}
-    header h1{font-size:28px;font-weight:800;}
-    header p{margin-top:8px;opacity:0.75;font-size:15px;}
-    .header-badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:20px;}
-    .badge{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:999px;padding:5px 16px;font-size:13px;color:#fff;}
-    .container{max-width:720px;margin:0 auto;padding:24px 16px 60px;}
-    section{margin-bottom:28px;}
-    h2.section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--sub);margin-bottom:12px;padding-left:4px;}
-    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.07);border:1px solid var(--border);}
-    .card+.card{margin-top:12px;}
-    .flight-card{background:linear-gradient(135deg,#1d1d2e,#3a3a5c);border-radius:16px;padding:20px 24px;color:#fff;}
-    .flight-row{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
-    .airport{flex:1;text-align:center;}
-    .airport .iata{font-size:26px;font-weight:800;letter-spacing:1px;}
-    .airport .city{font-size:11px;opacity:0.6;margin-top:2px;}
-    .flight-middle{flex:1;text-align:center;}
-    .flight-middle .arrow{font-size:20px;opacity:0.6;}
-    .flight-middle .flight-no{font-size:12px;background:rgba(255,255,255,0.12);border-radius:6px;padding:2px 8px;display:inline-block;margin-top:4px;}
-    .flight-times{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);}
-    .flight-times .t{font-size:13px;opacity:0.7;}
-    .flight-times .v{font-size:15px;font-weight:700;}
-    .flight-divider{border:none;border-top:1px dashed rgba(255,255,255,0.15);margin:16px 0;}
-    .booking-ref{font-size:12px;opacity:0.6;text-align:right;}
-    .booking-ref span{font-weight:700;font-size:14px;opacity:1;}
-    .hotel-card{display:flex;gap:16px;align-items:flex-start;}
-    .hotel-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--accent),#e76f51);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
-    .hotel-info h3{font-size:16px;font-weight:700;}
-    .hotel-info .meta{font-size:13px;color:var(--sub);margin-top:4px;}
-    .hotel-info .note{font-size:12px;color:var(--blue);background:#edf4fb;border-radius:6px;padding:4px 10px;margin-top:8px;display:inline-block;}
-    .day-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
-    .day-badge{width:48px;height:48px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;color:#fff;}
-    .day-badge .num{font-size:20px;line-height:1;}
-    .day1{background:linear-gradient(135deg,#457b9d,#1d3557);}
-    .day2{background:linear-gradient(135deg,#2a9d8f,#264653);}
-    .day3{background:linear-gradient(135deg,#e63946,#9d2932);}
-    .day-title{font-size:18px;font-weight:800;}
-    .day-subtitle{font-size:13px;color:var(--sub);}
-    .timeline{list-style:none;padding-left:0;}
-    .timeline li{display:flex;gap:14px;padding-bottom:18px;position:relative;}
-    .timeline li:not(:last-child)::before{content:'';position:absolute;left:17px;top:36px;bottom:0;width:2px;background:var(--border);}
-    .tl-dot{width:34px;height:34px;border-radius:10px;background:var(--bg);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;z-index:1;}
-    .tl-content{flex:1;padding-top:4px;}
-    .tl-content strong{font-size:15px;display:block;}
-    .tl-content p{font-size:13px;color:var(--sub);margin-top:3px;}
-    .tl-tag{display:inline-block;font-size:11px;background:#edf4fb;color:var(--blue);border-radius:5px;padding:1px 7px;margin-top:5px;margin-right:4px;}
-    .tl-tag.orange{background:#fff4e6;color:#c25d00;}
-    .tl-tag.green{background:#e6f7f5;color:#1a7a70;}
-    .tl-tag.red{background:#fdecea;color:#b5202a;}
-    .food-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;}
-    .food-item{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 12px;text-align:center;}
-    .food-item .emoji{font-size:28px;display:block;margin-bottom:6px;}
-    .food-item .name{font-size:14px;font-weight:700;}
-    .food-item .desc{font-size:12px;color:var(--sub);margin-top:2px;}
-    .ins-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--border);font-size:14px;}
-    .ins-row:last-child{border-bottom:none;}
-    .ins-row .label{color:var(--sub);}
-    .ins-row .value{font-weight:600;text-align:right;}
-    .emergency-box{background:linear-gradient(135deg,#e63946,#9d2932);border-radius:12px;padding:16px;color:#fff;text-align:center;margin-top:14px;}
-    .emergency-box .label{font-size:12px;opacity:0.8;}
-    .emergency-box .number{font-size:22px;font-weight:800;margin-top:4px;letter-spacing:1px;}
-    .emergency-box .sub{font-size:11px;opacity:0.7;margin-top:4px;}
-    .checklist{list-style:none;}
-    .checklist li{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border);font-size:14px;}
-    .checklist li:last-child{border-bottom:none;}
-    .check-box{width:22px;height:22px;border-radius:6px;border:2px solid var(--border);flex-shrink:0;}
-    .tip-list{list-style:none;}
-    .tip-list li{display:flex;gap:10px;font-size:14px;padding:8px 0;border-bottom:1px solid var(--border);}
-    .tip-list li:last-child{border-bottom:none;}
-    .tip-list li .icon{font-size:18px;flex-shrink:0;}
+    :root {
+      --red: #e63946;
+      --dark: #1d1d2e;
+      --mid: #2f2f45;
+      --card: #ffffff;
+      --bg: #f4f4f8;
+      --accent: #f4a261;
+      --green: #2a9d8f;
+      --blue: #457b9d;
+      --text: #2b2b3b;
+      --sub: #6b6b80;
+      --border: #e0e0ec;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ─────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, var(--dark) 0%, #3a3a5c 100%);
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    header .flag { font-size: 52px; display: block; margin-bottom: 12px; }
+    header h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+    header p { margin-top: 8px; opacity: 0.75; font-size: 15px; }
+    .header-badges {
+      display: flex; justify-content: center; gap: 10px;
+      flex-wrap: wrap; margin-top: 20px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 999px;
+      padding: 5px 16px;
+      font-size: 13px;
+      color: #fff;
+    }
+
+    /* ── LAYOUT ──────────────────────────────── */
+    .container { max-width: 720px; margin: 0 auto; padding: 24px 16px 60px; }
+
+    section { margin-bottom: 28px; }
+
+    h2.section-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--sub);
+      margin-bottom: 12px;
+      padding-left: 4px;
+    }
+
+    /* ── CARDS ───────────────────────────────── */
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border: 1px solid var(--border);
+    }
+    .card + .card { margin-top: 12px; }
+
+    /* ── FLIGHT CARD ─────────────────────────── */
+    .flight-card {
+      background: linear-gradient(135deg, #1d1d2e, #3a3a5c);
+      border-radius: 16px;
+      padding: 20px 24px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .flight-card::after {
+      content: '✈';
+      position: absolute;
+      right: 20px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+      opacity: 0.06;
+    }
+    .flight-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .flight-row:last-child { margin-bottom: 0; }
+    .airport {
+      flex: 1;
+      text-align: center;
+    }
+    .airport .iata { font-size: 26px; font-weight: 800; letter-spacing: 1px; }
+    .airport .city { font-size: 11px; opacity: 0.6; margin-top: 2px; }
+    .flight-middle {
+      flex: 1;
+      text-align: center;
+    }
+    .flight-middle .arrow { font-size: 20px; opacity: 0.6; }
+    .flight-middle .flight-no {
+      font-size: 12px;
+      background: rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 2px 8px;
+      display: inline-block;
+      margin-top: 4px;
+    }
+    .flight-times {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .flight-times .t { font-size: 13px; opacity: 0.7; }
+    .flight-times .v { font-size: 15px; font-weight: 700; }
+    .flight-divider {
+      border: none;
+      border-top: 1px dashed rgba(255,255,255,0.15);
+      margin: 16px 0;
+    }
+    .booking-ref {
+      font-size: 12px;
+      opacity: 0.6;
+      text-align: right;
+    }
+    .booking-ref span { font-weight: 700; font-size: 14px; opacity: 1; }
+
+    /* ── HOTEL CARD ──────────────────────────── */
+    .hotel-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .hotel-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--accent), #e76f51);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .hotel-info h3 { font-size: 16px; font-weight: 700; }
+    .hotel-info .meta { font-size: 13px; color: var(--sub); margin-top: 4px; }
+    .hotel-info .note {
+      font-size: 12px; color: var(--blue);
+      background: #edf4fb; border-radius: 6px;
+      padding: 4px 10px; margin-top: 8px; display: inline-block;
+    }
+
+    /* ── DAY SCHEDULE ────────────────────────── */
+    .day-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .day-badge {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700;
+      flex-shrink: 0;
+      color: #fff;
+    }
+    .day-badge .num { font-size: 20px; line-height: 1; }
+    .day1 { background: linear-gradient(135deg, #457b9d, #1d3557); }
+    .day2 { background: linear-gradient(135deg, #2a9d8f, #264653); }
+    .day3 { background: linear-gradient(135deg, #e63946, #9d2932); }
+    .day-title { font-size: 18px; font-weight: 800; }
+    .day-subtitle { font-size: 13px; color: var(--sub); }
+
+    .timeline { list-style: none; padding-left: 0; }
+    .timeline li {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 18px;
+      position: relative;
+    }
+    .timeline li:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      left: 17px; top: 36px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-dot {
+      width: 34px; height: 34px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    .tl-content { flex: 1; padding-top: 4px; }
+    .tl-content strong { font-size: 15px; display: block; }
+    .tl-content p { font-size: 13px; color: var(--sub); margin-top: 3px; }
+    .tl-tag {
+      display: inline-block;
+      font-size: 11px;
+      background: #edf4fb;
+      color: var(--blue);
+      border-radius: 5px;
+      padding: 1px 7px;
+      margin-top: 5px;
+      margin-right: 4px;
+    }
+    .tl-tag.orange { background: #fff4e6; color: #c25d00; }
+    .tl-tag.green { background: #e6f7f5; color: #1a7a70; }
+    .tl-tag.red { background: #fdecea; color: #b5202a; }
+
+    /* ── FOOD ────────────────────────────────── */
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .food-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+    }
+    .food-item .emoji { font-size: 28px; display: block; margin-bottom: 6px; }
+    .food-item .name { font-size: 14px; font-weight: 700; }
+    .food-item .desc { font-size: 12px; color: var(--sub); margin-top: 2px; }
+
+    /* ── INSURANCE ───────────────────────────── */
+    .ins-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .ins-row:last-child { border-bottom: none; }
+    .ins-row .label { color: var(--sub); }
+    .ins-row .value { font-weight: 600; text-align: right; }
+    .emergency-box {
+      background: linear-gradient(135deg, #e63946, #9d2932);
+      border-radius: 12px;
+      padding: 16px;
+      color: #fff;
+      text-align: center;
+      margin-top: 14px;
+    }
+    .emergency-box .label { font-size: 12px; opacity: 0.8; }
+    .emergency-box .number { font-size: 22px; font-weight: 800; margin-top: 4px; letter-spacing: 1px; }
+    .emergency-box .sub { font-size: 11px; opacity: 0.7; margin-top: 4px; }
+
+    /* ── CHECKLIST ───────────────────────────── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 22px; height: 22px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    /* ── TIPS ────────────────────────────────── */
+    .tip-list { list-style: none; }
+    .tip-list li {
+      display: flex;
+      gap: 10px;
+      font-size: 14px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tip-list li:last-child { border-bottom: none; }
+    .tip-list li .icon { font-size: 18px; flex-shrink: 0; }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 480px) {
+      header h1 { font-size: 22px; }
+      .airport .iata { font-size: 20px; }
+    }
+
+    /* ── MAIN TABS ───────────────────────────── */
+    .main-tabs {
+      background: var(--dark);
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .main-tabs-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .main-tab-btn {
+      flex: 1;
+      padding: 14px 8px;
+      color: rgba(255,255,255,0.5);
+      border: none;
+      background: none;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+      font-family: inherit;
+      letter-spacing: 0.3px;
+    }
+    .main-tab-btn.active { color: #fff; border-bottom-color: var(--accent); }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── MAP TAB ─────────────────────────────── */
+    .map-container { max-width: 720px; margin: 0 auto; padding: 20px 16px 60px; }
+    .day-selector { display: flex; gap: 10px; margin-bottom: 16px; }
+    .day-sel-btn {
+      flex: 1; padding: 13px;
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      background: var(--card);
+      font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.2s;
+      font-family: inherit; color: var(--text);
+    }
+    .day-sel-btn .day-label { display: block; font-size: 11px; opacity: 0.6; margin-top: 2px; font-weight: 500; }
+    .day-sel-btn.active { border-color: transparent; color: #fff; }
+    .day-sel-btn.d1.active { background: linear-gradient(135deg, #457b9d, #1d3557); }
+    .day-sel-btn.d2.active { background: linear-gradient(135deg, #2a9d8f, #264653); }
+    .map-panel { display: none; }
+    .map-panel.active { display: block; }
+    #map-day1, #map-day2 {
+      height: 420px; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      margin-bottom: 14px; border: 1px solid var(--border);
+    }
+    .map-legend {
+      background: var(--card); border-radius: 14px;
+      padding: 16px; border: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .map-legend-title {
+      font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: var(--sub); margin-bottom: 12px;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14px;
+    }
+    .legend-item:last-child { border-bottom: none; }
+    .legend-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 800; color: #fff; flex-shrink: 0;
+    }
+    .legend-info { flex: 1; }
+    .legend-info strong { display: block; font-size: 14px; }
+    .legend-info span { font-size: 12px; color: var(--sub); }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
+
 <header>
   <span class="flag">🇯🇵</span>
   <h1>오사카 여행</h1>
@@ -92,32 +405,84 @@
     <span class="badge">🛡️ 여행보험 완료</span>
   </div>
 </header>
+
+<!-- ── 메인 탭 네비게이션 ── -->
+<nav class="main-tabs">
+  <div class="main-tabs-inner">
+    <button class="main-tab-btn active" onclick="switchTab('planner', this)">📋 여행 플래너</button>
+    <button class="main-tab-btn" onclick="switchTab('map', this)">🗺️ 여행 경로 지도</button>
+  </div>
+</nav>
+
+<!-- ── 플래너 탭 ── -->
+<div id="tab-planner" class="tab-panel active">
 <div class="container">
+
+  <!-- ── 항공편 ── -->
   <section>
     <h2 class="section-title">✈️ 항공편</h2>
     <div class="flight-card">
+      <!-- 가는 편 -->
       <div class="flight-row">
-        <div class="airport"><div class="iata">ICN</div><div class="city">서울/인천</div></div>
-        <div class="flight-middle"><div class="arrow">→</div><div class="flight-no">LJ231</div></div>
-        <div class="airport"><div class="iata">KIX</div><div class="city">오사카/간사이</div></div>
+        <div class="airport">
+          <div class="iata">ICN</div>
+          <div class="city">서울/인천</div>
+        </div>
+        <div class="flight-middle">
+          <div class="arrow">→</div>
+          <div class="flight-no">LJ231</div>
+        </div>
+        <div class="airport">
+          <div class="iata">KIX</div>
+          <div class="city">오사카/간사이</div>
+        </div>
       </div>
       <div class="flight-times">
-        <div><div class="t">출발</div><div class="v">4/25(토) 07:40</div></div>
-        <div style="text-align:right"><div class="t">도착</div><div class="v">09:35</div></div>
+        <div>
+          <div class="t">출발</div>
+          <div class="v">4/25(토) 07:40</div>
+        </div>
+        <div style="text-align:right">
+          <div class="t">도착</div>
+          <div class="v">09:35</div>
+        </div>
       </div>
+
       <hr class="flight-divider" />
+
+      <!-- 오는 편 -->
       <div class="flight-row">
-        <div class="airport"><div class="iata">KIX</div><div class="city">오사카/간사이</div></div>
-        <div class="flight-middle"><div class="arrow">→</div><div class="flight-no">LJ234</div></div>
-        <div class="airport"><div class="iata">ICN</div><div class="city">서울/인천</div></div>
+        <div class="airport">
+          <div class="iata">KIX</div>
+          <div class="city">오사카/간사이</div>
+        </div>
+        <div class="flight-middle">
+          <div class="arrow">→</div>
+          <div class="flight-no">LJ234</div>
+        </div>
+        <div class="airport">
+          <div class="iata">ICN</div>
+          <div class="city">서울/인천</div>
+        </div>
       </div>
       <div class="flight-times">
-        <div><div class="t">출발</div><div class="v">4/27(월) 13:10</div></div>
-        <div style="text-align:right"><div class="t">도착</div><div class="v">15:00</div></div>
+        <div>
+          <div class="t">출발</div>
+          <div class="v">4/27(월) 13:10</div>
+        </div>
+        <div style="text-align:right">
+          <div class="t">도착</div>
+          <div class="v">15:00</div>
+        </div>
       </div>
-      <div class="booking-ref" style="margin-top:14px">예약번호 <span>V37M2N</span></div>
+
+      <div class="booking-ref" style="margin-top:14px">
+        예약번호 <span>V37M2N</span>
+      </div>
     </div>
   </section>
+
+  <!-- ── 숙소 ── -->
   <section>
     <h2 class="section-title">🏨 숙소</h2>
     <div class="card">
@@ -133,75 +498,244 @@
       </div>
     </div>
   </section>
+
+  <!-- ── 1일차 ── -->
   <section>
     <h2 class="section-title">📅 일정</h2>
     <div class="card">
       <div class="day-header">
-        <div class="day-badge day1"><span>DAY</span><span class="num">1</span></div>
-        <div><div class="day-title">4월 25일 (토) — 오사카 도착</div><div class="day-subtitle">난바 · 도톤보리 · 우메다 · 텐마</div></div>
+        <div class="day-badge day1">
+          <span>DAY</span>
+          <span class="num">1</span>
+        </div>
+        <div>
+          <div class="day-title">4월 25일 (토) — 오사카 도착</div>
+          <div class="day-subtitle">난바 · 도톤보리 · 우메다 · 텐마</div>
+        </div>
       </div>
       <ul class="timeline">
-        <li><div class="tl-dot">✈️</div><div class="tl-content"><strong>간사이 공항 도착 (09:35)</strong><p>입국 심사 후 10시경 출발 준비</p></div></li>
-        <li><div class="tl-dot">🚃</div><div class="tl-content"><strong>난카이 특급 라피트 → 난바역</strong><p>2명분 편도 예약 완료 · 약 40분 소요</p><span class="tl-tag">⚠️ 바우처에서 좌석지정 후 QR 발급 필수</span></div></li>
-        <li><div class="tl-dot">🏨</div><div class="tl-content"><strong>숙소 도착 &amp; 짐 맡기기</strong><p>난바역에서 지하철 1정거장 · 체크인은 16시</p></div></li>
-        <li><div class="tl-dot">🥟</div><div class="tl-content"><strong>난바 · 신사이바시스지 · 도톤보리</strong><p>551만두 · 쿠시카츠 · 도톤보리 강변</p><span class="tl-tag orange">🚤 리버크루즈: 돈키호테 도톤보리점 옆 티켓부스</span></div></li>
-        <li><div class="tl-dot">🏙️</div><div class="tl-content"><strong>우메다 이동 (지하철 15분)</strong><p>포켓몬센터 · 한큐 우메다 본점 · 짱구스토어</p><span class="tl-tag green">🌆 우메다 공중정원 전망대 (17~18시)</span></div></li>
-        <li><div class="tl-dot">🍱</div><div class="tl-content"><strong>저녁 — 이즈모 루쿠아 (장어덮밥)</strong><p>우메다 루쿠아 내 위치</p></div></li>
-        <li><div class="tl-dot">🌙</div><div class="tl-content"><strong>텐마역 야경 → 난바 귀환</strong><p>야식 사서 숙소 체크인 &amp; 휴식</p></div></li>
+        <li>
+          <div class="tl-dot">✈️</div>
+          <div class="tl-content">
+            <strong>간사이 공항 도착 (09:35)</strong>
+            <p>입국 심사 후 10시경 출발 준비</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🚃</div>
+          <div class="tl-content">
+            <strong>난카이 특급 라피트 → 난바역</strong>
+            <p>2명분 편도 예약 완료 · 약 40분 소요</p>
+            <span class="tl-tag">⚠️ 바우처 링크에서 좌석지정 후 QR 발급 필수</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🏨</div>
+          <div class="tl-content">
+            <strong>숙소 도착 &amp; 짐 맡기기</strong>
+            <p>난바역에서 지하철 1정거장 · 체크인은 16시</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🥟</div>
+          <div class="tl-content">
+            <strong>난바 · 신사이바시스지 · 도톤보리</strong>
+            <p>551만두 · 쿠시카츠 · 도톤보리 강변 구경</p>
+            <span class="tl-tag orange">🚤 리버크루즈 예약: 돈키호테 도톤보리점 옆 티켓부스</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🏙️</div>
+          <div class="tl-content">
+            <strong>우메다 이동 (신사이바시역에서 지하철 15분)</strong>
+            <p>포켓몬센터 오사카 · 한큐 우메다 본점 · 짱구스토어</p>
+            <span class="tl-tag green">🌆 우메다 공중정원 전망대 (17~18시)</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🍱</div>
+          <div class="tl-content">
+            <strong>저녁 — 이즈모 루쿠아 (장어덮밥)</strong>
+            <p>우메다 루쿠아 내 위치</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🌙</div>
+          <div class="tl-content">
+            <strong>텐마역 야경 구경 → 난바 귀환</strong>
+            <p>야식 사서 숙소 체크인 &amp; 휴식</p>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
+
+  <!-- ── 2일차 ── -->
   <section>
     <div class="card">
       <div class="day-header">
-        <div class="day-badge day2"><span>DAY</span><span class="num">2</span></div>
-        <div><div class="day-title">4월 26일 (일) — 교토 당일치기</div><div class="day-subtitle">청수사 · 후시미이나리 · 신세카이</div></div>
+        <div class="day-badge day2">
+          <span>DAY</span>
+          <span class="num">2</span>
+        </div>
+        <div>
+          <div class="day-title">4월 26일 (일) — 교토 당일치기</div>
+          <div class="day-subtitle">청수사 · 후시미이나리 · 신세카이</div>
+        </div>
       </div>
       <ul class="timeline">
-        <li><div class="tl-dot">🌅</div><div class="tl-content"><strong>기상 &amp; 근처 아침식사</strong><p>9시경 출발 준비</p></div></li>
-        <li><div class="tl-dot">🚃</div><div class="tl-content"><strong>교토 이동</strong><p>숙소 → 우메다 (30분) → 한큐선 가라스마역 (45분)</p></div></li>
-        <li><div class="tl-dot">⛩️</div><div class="tl-content"><strong>기요미즈데라 (清水寺)</strong><p>이동 중 교토 거리 구경</p></div></li>
-        <li><div class="tl-dot">🦊</div><div class="tl-content"><strong>후시미이나리 (伏見稲荷)</strong><p>지하철로 약 30분 · 오후 3시경 예상</p><span class="tl-tag">대안: 은각사 또는 아라시야마 대나무숲</span></div></li>
-        <li><div class="tl-dot">🏯</div><div class="tl-content"><strong>금각사 (金閣寺) — 여유 있으면</strong><p>후시미이나리 근처 역에서 약 1시간</p></div></li>
-        <li><div class="tl-dot">🗼</div><div class="tl-content"><strong>신세카이 → 츠텐카쿠 전망대 (오후 5~7시)</strong><p>저녁식사</p><span class="tl-tag green">대안: 아베노하루카스 300</span></div></li>
-        <li><div class="tl-dot">🛒</div><div class="tl-content"><strong>메가 돈키호테 쇼핑 → 숙소 복귀</strong></div></li>
+        <li>
+          <div class="tl-dot">🌅</div>
+          <div class="tl-content">
+            <strong>기상 &amp; 근처 아침식사</strong>
+            <p>9시경 출발 준비</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🚃</div>
+          <div class="tl-content">
+            <strong>교토 이동</strong>
+            <p>숙소 → 우메다 (약 30분) → 한큐선 가라스마역 (약 45분)</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">⛩️</div>
+          <div class="tl-content">
+            <strong>기요미즈데라 (清水寺)</strong>
+            <p>이동 중 교토 거리 구경</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🦊</div>
+          <div class="tl-content">
+            <strong>후시미이나리 (伏見稲荷)</strong>
+            <p>지하철로 약 30분 · 오후 3시경 예상</p>
+            <span class="tl-tag">대안: 은각사 또는 아라시야마 대나무숲</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🏯</div>
+          <div class="tl-content">
+            <strong>금각사 (金閣寺) — 여유 있으면</strong>
+            <p>후시미이나리 근처 역에서 약 1시간</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🗼</div>
+          <div class="tl-content">
+            <strong>신세카이 → 츠텐카쿠 전망대 (오후 5~7시)</strong>
+            <p>이동시간 약 1시간 30분 · 저녁식사</p>
+            <span class="tl-tag green">대안: 아베노하루카스 300</span>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🛒</div>
+          <div class="tl-content">
+            <strong>메가 돈키호테 쇼핑 → 숙소 복귀</strong>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
+
+  <!-- ── 3일차 ── -->
   <section>
     <div class="card">
       <div class="day-header">
-        <div class="day-badge day3"><span>DAY</span><span class="num">3</span></div>
-        <div><div class="day-title">4월 27일 (월) — 귀국</div><div class="day-subtitle">난카이 라피트 → 간사이 공항</div></div>
+        <div class="day-badge day3">
+          <span>DAY</span>
+          <span class="num">3</span>
+        </div>
+        <div>
+          <div class="day-title">4월 27일 (월) — 귀국</div>
+          <div class="day-subtitle">난카이 라피트 → 간사이 공항</div>
+        </div>
       </div>
       <ul class="timeline">
-        <li><div class="tl-dot">🌄</div><div class="tl-content"><strong>오전 — 자유시간 &amp; 체크아웃</strong><p>난바 근처 마지막 쇼핑</p></div></li>
-        <li><div class="tl-dot">🚃</div><div class="tl-content"><strong>숙소 → 난바역 (지하철 15분)</strong><p>11시 30분까지 간사이 공항 도착 목표</p></div></li>
-        <li><div class="tl-dot">✈️</div><div class="tl-content"><strong>난카이 라피트 출발 → 공항 (13:10 탑승)</strong><p>LJ234 · 오사카/간사이 → 서울/인천</p><span class="tl-tag red">⚠️ 귀국편 라피트 예매 필요!</span></div></li>
+        <li>
+          <div class="tl-dot">🌄</div>
+          <div class="tl-content">
+            <strong>오전 — 자유시간 &amp; 체크아웃</strong>
+            <p>난바 근처 마지막 쇼핑</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">🚃</div>
+          <div class="tl-content">
+            <strong>숙소 → 난바역 (지하철 15분)</strong>
+            <p>11시 30분까지 간사이 공항 도착 목표</p>
+          </div>
+        </li>
+        <li>
+          <div class="tl-dot">✈️</div>
+          <div class="tl-content">
+            <strong>난카이 라피트 출발 → 공항 (13:10 탑승)</strong>
+            <p>LJ234 · 오사카/간사이 → 서울/인천</p>
+            <span class="tl-tag red">⚠️ 귀국편 라피트 예매 필요!</span>
+          </div>
+        </li>
       </ul>
     </div>
   </section>
+
+  <!-- ── 맛집 ── -->
   <section>
     <h2 class="section-title">🍽️ 맛집 메모</h2>
     <div class="food-grid">
-      <div class="food-item"><span class="emoji">🥟</span><div class="name">551호라이</div><div class="desc">난바 대표 만두집</div></div>
-      <div class="food-item"><span class="emoji">🥞</span><div class="name">아지노야</div><div class="desc">오코노미야끼</div></div>
-      <div class="food-item"><span class="emoji">🥘</span><div class="name">치보</div><div class="desc">오코노미야끼 (대안)</div></div>
-      <div class="food-item"><span class="emoji">🍣</span><div class="name">이즈모 루쿠아</div><div class="desc">장어덮밥 (우메다)</div></div>
-      <div class="food-item"><span class="emoji">🍢</span><div class="name">쿠시카츠</div><div class="desc">도톤보리 일대</div></div>
+      <div class="food-item">
+        <span class="emoji">🥟</span>
+        <div class="name">551호라이</div>
+        <div class="desc">난바 대표 만두집</div>
+      </div>
+      <div class="food-item">
+        <span class="emoji">🥞</span>
+        <div class="name">아지노야</div>
+        <div class="desc">오코노미야끼</div>
+      </div>
+      <div class="food-item">
+        <span class="emoji">🥘</span>
+        <div class="name">치보</div>
+        <div class="desc">오코노미야끼 (대안)</div>
+      </div>
+      <div class="food-item">
+        <span class="emoji">🍣</span>
+        <div class="name">이즈모 루쿠아</div>
+        <div class="desc">장어덮밥 (우메다)</div>
+      </div>
+      <div class="food-item">
+        <span class="emoji">🍢</span>
+        <div class="name">쿠시카츠</div>
+        <div class="desc">도톤보리 일대</div>
+      </div>
     </div>
   </section>
+
+  <!-- ── 의논할 사항 ── -->
   <section>
     <h2 class="section-title">💬 의논할 사항</h2>
     <div class="card">
       <ul class="tip-list">
-        <li><span class="icon">🏯</span><span>오사카성 갈지 말지?</span></li>
-        <li><span class="icon">🎀</span><span>메이드카페 갈지? (1일차)</span></li>
-        <li><span class="icon">🎫</span><span>주유패스 구매? (우메다 공중정원 오후 3시까지만 무료)</span></li>
-        <li><span class="icon">⛩️</span><span>후시미이나리 빡세면? → 은각사 또는 대나무숲으로 변경</span></li>
+        <li>
+          <span class="icon">🏯</span>
+          <span>오사카성 갈지 말지?</span>
+        </li>
+        <li>
+          <span class="icon">🎀</span>
+          <span>메이드카페 갈지? (1일차 — 아카바네 오사카점)</span>
+        </li>
+        <li>
+          <span class="icon">🎫</span>
+          <span>주유패스 구매? (우메다 공중정원 오후 3시까지만 무료, 이후 할인)</span>
+        </li>
+        <li>
+          <span class="icon">⛩️</span>
+          <span>후시미이나리 빡세면? → 은각사 또는 아라시야마 대나무숲으로 변경</span>
+        </li>
       </ul>
     </div>
   </section>
+
+  <!-- ── 체크리스트 ── -->
   <section>
     <h2 class="section-title">✅ 출발 전 체크리스트</h2>
     <div class="card">
@@ -216,14 +750,39 @@
       </ul>
     </div>
   </section>
+
+  <!-- ── 여행 보험 ── -->
   <section>
     <h2 class="section-title">🛡️ 여행자 보험</h2>
     <div class="card">
-      <div class="ins-row"><span class="label">보험사</span><span class="value">Chubb (라이나손해보험)</span></div>
-      <div class="ins-row"><span class="label">보험기간</span><span class="value">2026.04.25 ~ 04.27</span></div>
-      <div class="ins-row"><span class="label">해외 의료비 (상해/질병)</span><span class="value">각 4,000만원</span></div>
-      <div class="ins-row"><span class="label">상해사망·후유장해</span><span class="value">2억원</span></div>
-      <div class="ins-row"><span class="label">배상책임</span><span class="value">5,000만원</span></div>
+      <div class="ins-row">
+        <span class="label">보험사</span>
+        <span class="value">Chubb (라이나손해보험)</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">보험기간</span>
+        <span class="value">2026.04.25 ~ 04.27</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">확인번호</span>
+        <span class="value">P25O00014584986</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">해외 의료비 (상해/질병)</span>
+        <span class="value">각 4,000만원</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">상해사망·후유장해</span>
+        <span class="value">2억원</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">배상책임</span>
+        <span class="value">5,000만원</span>
+      </div>
+      <div class="ins-row">
+        <span class="label">항공기 수화물 지연 보상</span>
+        <span class="value">70만원</span>
+      </div>
       <div class="emergency-box">
         <div class="label">🆘 해외 긴급 지원 (24시간 한국어)</div>
         <div class="number">+82-1588-1983</div>
@@ -231,7 +790,183 @@
       </div>
     </div>
   </section>
-  <p style="text-align:center;font-size:12px;color:var(--sub);margin-top:20px">🇯🇵 즐거운 여행 되세요! 안전하게 다녀오기 💪</p>
+
+  <p style="text-align:center; font-size:12px; color:var(--sub); margin-top:20px">
+    🇯🇵 즐거운 여행 되세요! 안전하게 다녀오기 💪
+  </p>
+
 </div>
+</div><!-- /tab-planner -->
+
+<!-- ── 지도 탭 ── -->
+<div id="tab-map" class="tab-panel">
+  <div class="map-container">
+
+    <!-- 일차 선택 -->
+    <div class="day-selector">
+      <button class="day-sel-btn d1 active" onclick="switchDay(1, this)">
+        DAY 1
+        <span class="day-label">오사카 시내</span>
+      </button>
+      <button class="day-sel-btn d2" onclick="switchDay(2, this)">
+        DAY 2
+        <span class="day-label">교토 당일치기</span>
+      </button>
+    </div>
+
+    <!-- DAY 1 지도 -->
+    <div id="map-panel-1" class="map-panel active">
+      <div id="map-day1"></div>
+      <div class="map-legend">
+        <div class="map-legend-title">📍 1일차 경로 — 오사카 (4/25 토)</div>
+        <div id="legend-day1"></div>
+      </div>
+    </div>
+
+    <!-- DAY 2 지도 -->
+    <div id="map-panel-2" class="map-panel">
+      <div id="map-day2"></div>
+      <div class="map-legend">
+        <div class="map-legend-title">📍 2일차 경로 — 교토 당일치기 (4/26 일)</div>
+        <div id="legend-day2"></div>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:12px;color:var(--sub);margin-top:12px">
+      © OpenStreetMap contributors · 선은 이동 순서를 나타냅니다
+    </p>
+  </div>
+</div><!-- /tab-map -->
+
+<script>
+/* ── 탭 전환 ───────────────────────────────── */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.main-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  btn.classList.add('active');
+  if (name === 'map' && !window._mapsInited) initMaps();
+}
+
+/* ── 일차 전환 ─────────────────────────────── */
+function switchDay(day, btn) {
+  document.querySelectorAll('.map-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.day-sel-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('map-panel-' + day).classList.add('active');
+  btn.classList.add('active');
+  // 지도 크기 재계산
+  setTimeout(() => {
+    if (day === 1 && window._map1) window._map1.invalidateSize();
+    if (day === 2 && window._map2) window._map2.invalidateSize();
+  }, 50);
+}
+
+/* ── 지도 초기화 ────────────────────────────── */
+function initMaps() {
+  window._mapsInited = true;
+
+  const TILE = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  const ATTR = '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>';
+
+  /* 마커 색상 */
+  const COL1 = '#457b9d'; // Day1 파란계열
+  const COL2 = '#2a9d8f'; // Day2 초록계열
+
+  /* ── DAY 1 경유지 ── */
+  const day1 = [
+    { n:'간사이 공항 (KIX)',         e:'✈️',  note:'09:35 도착',               lat:34.4347, lng:135.2440 },
+    { n:'난카이 라피트 → 난바역',      e:'🚃',  note:'특급 약 40분 소요',          lat:34.6634, lng:135.5013 },
+    { n:'숙소 짐 맡기기',             e:'🏨',  note:'오야도 호텔 11 난바미나미',   lat:34.6611, lng:135.4988 },
+    { n:'도톤보리 · 신사이바시스지',   e:'🥟',  note:'551만두 · 쿠시카츠 · 리버크루즈', lat:34.6687, lng:135.5028 },
+    { n:'우메다',                    e:'🏙️', note:'포켓몬센터 · 한큐 본점 · 짱구스토어', lat:34.7024, lng:135.4959 },
+    { n:'우메다 공중정원 전망대',       e:'🌆',  note:'17~18시 방문 권장',          lat:34.7057, lng:135.4903 },
+    { n:'이즈모 루쿠아 (장어덮밥)',     e:'🍱',  note:'우메다 루쿠아 내',           lat:34.7028, lng:135.4978 },
+    { n:'텐마역 야경 구경',            e:'🌙',  note:'야식 후 숙소 복귀',          lat:34.6940, lng:135.5110 },
+  ];
+
+  /* ── DAY 2 경유지 ── */
+  const day2 = [
+    { n:'숙소 출발',               e:'🌅',  note:'9시경 출발 준비',             lat:34.6611, lng:135.4988 },
+    { n:'우메다 (환승)',            e:'🚃',  note:'한큐선 승차',                lat:34.7024, lng:135.4959 },
+    { n:'교토 가라스마역',          e:'🚃',  note:'한큐선 약 45분',             lat:35.0116, lng:135.7568 },
+    { n:'기요미즈데라 (清水寺)',     e:'⛩️',  note:'교토 대표 사원',             lat:34.9948, lng:135.7851 },
+    { n:'후시미이나리 (伏見稲荷)',   e:'🦊',  note:'오후 3시경 예상',            lat:34.9671, lng:135.7727 },
+    { n:'신세카이 · 츠텐카쿠',      e:'🗼',  note:'전망대 오후 5~7시',          lat:34.6527, lng:135.5063 },
+    { n:'메가 돈키호테 쇼핑',       e:'🛒',  note:'난바 일대',                  lat:34.6673, lng:135.5018 },
+    { n:'숙소 복귀',               e:'🏨',  note:'오야도 호텔 11',             lat:34.6611, lng:135.4988 },
+  ];
+
+  /* 커스텀 번호 마커 */
+  function makeIcon(num, color) {
+    return L.divIcon({
+      className: '',
+      iconAnchor: [18, 18],
+      popupAnchor: [0, -20],
+      html: `<div style="
+        width:36px;height:36px;border-radius:50%;
+        background:${color};color:#fff;
+        display:flex;align-items:center;justify-content:center;
+        font-size:14px;font-weight:800;
+        box-shadow:0 2px 8px rgba(0,0,0,0.3);
+        border:2px solid #fff;
+        font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;
+      ">${num}</div>`
+    });
+  }
+
+  /* 지도 & 범례 생성 */
+  function buildMap(mapId, stops, color) {
+    const map = L.map(mapId, { zoomControl: true });
+    L.tileLayer(TILE, { attribution: ATTR, maxZoom: 18 }).addTo(map);
+
+    const latlngs = stops.map(s => [s.lat, s.lng]);
+
+    // 경로 선
+    L.polyline(latlngs, {
+      color: color, weight: 3.5, opacity: 0.75,
+      dashArray: '8, 6'
+    }).addTo(map);
+
+    // 마커
+    stops.forEach((s, i) => {
+      const marker = L.marker([s.lat, s.lng], { icon: makeIcon(i + 1, color) }).addTo(map);
+      marker.bindPopup(
+        `<div style="font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif;min-width:140px">
+          <div style="font-size:20px;text-align:center;margin-bottom:4px">${s.e}</div>
+          <strong style="font-size:14px">${s.n}</strong>
+          <div style="font-size:12px;color:#888;margin-top:4px">${s.note}</div>
+        </div>`,
+        { maxWidth: 200 }
+      );
+    });
+
+    // 지도 범위 자동 맞춤
+    map.fitBounds(L.latLngBounds(latlngs), { padding: [40, 40] });
+
+    return map;
+  }
+
+  window._map1 = buildMap('map-day1', day1, COL1);
+  window._map2 = buildMap('map-day2', day2, COL2);
+
+  /* 범례 생성 */
+  function buildLegend(containerId, stops, color) {
+    const el = document.getElementById(containerId);
+    el.innerHTML = stops.map((s, i) => `
+      <div class="legend-item">
+        <div class="legend-num" style="background:${color}">${i + 1}</div>
+        <div style="font-size:20px">${s.e}</div>
+        <div class="legend-info">
+          <strong>${s.n}</strong>
+          <span>${s.note}</span>
+        </div>
+      </div>`).join('');
+  }
+
+  buildLegend('legend-day1', day1, COL1);
+  buildLegend('legend-day2', day2, COL2);
+}
+</script>
+
 </body>
 </html>
